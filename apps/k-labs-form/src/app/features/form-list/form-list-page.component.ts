@@ -4,14 +4,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'app-form-list-page',
   standalone: true,
   imports: [],
-  template: `
-    <p>
-      form-list-page works!
-    </p>
-  `,
+  template: `<p>form-list-page works!</p>`,
   styles: ``,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FormListPageComponent {
-
-}
+export default class FormListPageComponent {}
