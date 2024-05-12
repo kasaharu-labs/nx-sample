@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CreateFormComponent } from './containers/create-form/create-form.component';
 
 @Component({
   selector: 'app-create-form-page',
   standalone: true,
-  imports: [],
+  imports: [CreateFormComponent],
   template: `
     <h2>フォーム新規作成</h2>
-    <p>create-form-page works!</p>
+    <app-create-form></app-create-form>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
