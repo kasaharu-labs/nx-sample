@@ -1,18 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
+import { RouterTestingHarness } from '@angular/router/testing';
+import { appRoutes } from '../../app.routes';
 import FormListPageComponent from './form-list-page.component';
 
 describe('FormListPageComponent', () => {
+  let harness: RouterTestingHarness;
   let component: FormListPageComponent;
-  let fixture: ComponentFixture<FormListPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FormListPageComponent],
+      providers: [provideRouter(appRoutes)],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(FormListPageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    harness = await RouterTestingHarness.create();
+    component = await harness.navigateByUrl('', FormListPageComponent);
+
+    harness.detectChanges();
   });
 
   it('should create', () => {

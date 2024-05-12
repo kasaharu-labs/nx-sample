@@ -1,18 +1,26 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
+import { RouterTestingHarness } from '@angular/router/testing';
+import { appRoutes } from '../../app.routes';
 import CreateFormPageComponent from './create-form-page.component';
 
 describe('CreateFormPageComponent', () => {
+  let harness: RouterTestingHarness;
   let component: CreateFormPageComponent;
-  let fixture: ComponentFixture<CreateFormPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [CreateFormPageComponent],
+      providers: [provideRouter(appRoutes)],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CreateFormPageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    harness = await RouterTestingHarness.create();
+    component = await harness.navigateByUrl(
+      'forms/new',
+      CreateFormPageComponent
+    );
+
+    harness.detectChanges();
   });
 
   it('should create', () => {
