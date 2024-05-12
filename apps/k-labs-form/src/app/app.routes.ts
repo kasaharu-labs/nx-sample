@@ -7,4 +7,9 @@ export const appRoutes: Route[] = [
     loadComponent: () =>
       import('./features/form-list/form-list-page.component'),
   },
+  {
+    path: 'forms/new',
+    loadComponent: () =>
+      import('./features/create-form/create-form-page.component'),
+  },
 ];

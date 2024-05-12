@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { CreateFormPageComponent } from './create-form-page.component';
+import CreateFormPageComponent from './create-form-page.component';
 
 describe('CreateFormPageComponent', () => {
   let component: CreateFormPageComponent;
@@ -8,10 +7,9 @@ describe('CreateFormPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CreateFormPageComponent]
-    })
-    .compileComponents();
-    
+      imports: [CreateFormPageComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(CreateFormPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

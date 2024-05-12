@@ -4,14 +4,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'app-create-form-page',
   standalone: true,
   imports: [],
-  template: `
-    <p>
-      create-form-page works!
-    </p>
-  `,
-  styles: ``,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  template: `<p>create-form-page works!</p>`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CreateFormPageComponent {
-
-}
+export default class CreateFormPageComponent {}
